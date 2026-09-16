@@ -1,0 +1,36 @@
+[project]
+name = "document-chunks"
+version = "0.1.0"
+description = "Markdown and text chunk manifests with stable locators"
+readme = "README.md"
+authors = [
+    { name = "dima55279", email = "dima55279@yandex.ru" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.8,<3",
+    "typer>=0.12,<1",
+]
+
+[project.scripts]
+document-chunks = "document_chunks.cli:app"
+
+[build-system]
+requires = ["uv_build>=0.12.15,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "hypothesis>=6,<7",
+    "pytest>=8,<9",
+    "ruff>=0.6,<1",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]

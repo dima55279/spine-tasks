@@ -1,0 +1,1 @@
+"""Stable document chunk locators."""
